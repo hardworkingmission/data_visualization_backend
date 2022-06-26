@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
-require('dotenv').config({ path: 'env' });
+require('dotenv').config();
 
-const connectDB = () => {
-  return mongoose.connect(process.env.URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+const uri = `mongodb+srv://shakil:${process.env.DB_PASSWORD}@cluster0.hm2km.mongodb.net/?retryWrites=true&w=majority`;
+const connectDB = async () => {
+  await mongoose.connect(uri);
 };
 module.exports = connectDB;

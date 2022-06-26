@@ -10,9 +10,9 @@ app.use(cors({ origin: true }));
 
 app.use('/api/data-visualization', routes);
 
-const start = async () => {
+const start = () => {
   try {
-    await connectDB();
+    connectDB();
     app.listen(port, () => {
       console.log('listening on', port);
     });
