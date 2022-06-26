@@ -4,7 +4,6 @@ const cors = require('cors');
 const connectDB = require('./db/connectBD');
 const routes = require('./routes/dataVisualization');
 const port = process.env.PORT || 5000;
-require('dotenv').config();
 
 app.use(express.json());
 app.use(cors({ origin: true }));
